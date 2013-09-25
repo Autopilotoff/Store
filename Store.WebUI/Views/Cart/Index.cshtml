@@ -28,7 +28,7 @@
                     {
                         @Html.Hidden("ProductId", line.Product.ProductID)
                         @Html.HiddenFor(x=>x.ReturnUrl)
-                        <input class="actionButtons" type="submit" value="Remove" />
+                        <input class="actionButtons" type="submit" value="Удалить" />
                     }
                 </td>
             </tr>
@@ -45,4 +45,5 @@
 </table>
 <p align="center" class="actionButtons">
     <a href="@Model.ReturnUrl">Продолжить покупки</a>
+    @Html.ActionLink("Перейти к оплате", "Checkout")
 </p>
