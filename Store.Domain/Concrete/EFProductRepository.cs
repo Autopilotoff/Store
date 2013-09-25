@@ -12,10 +12,15 @@ namespace Store.Domain.Concrete
         private EFDbContext context = new EFDbContext();
         public IQueryable<Product> Products
         {
-            get
+            get { return context.Products; }
+        }
+        public void SaveProduct(Product product)
+        {
+            if (product.ProductID == 0)
             {
-                return context.Products;
+                context.Products.Add(product);
             }
+            context.SaveChanges();
         }
     }
 }
