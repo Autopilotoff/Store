@@ -1,0 +1,15 @@
+﻿@model Store.WebUI.Models.LogOnViewModel
+
+@{
+    ViewBag.Title = "Admin: Вход в личный кабинет";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Авторизация</h1>
+<p>Авторизируйтесь для доступа в административную часть:</p>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    @Html.EditorForModel()
+    <p><input type="submit" value="Войти" /></p>
+}

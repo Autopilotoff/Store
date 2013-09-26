@@ -10,6 +10,8 @@ using Store.Domain.Abstract;
 using Store.Domain.Entities;
 using Store.Domain.Concrete;
 using System.Configuration;
+using Store.WebUI.Infrastructure.Abstract;
+using Store.WebUI.Infrastructure.Concrete;
 
 namespace Store.WebUI.Infrastructure
 {
@@ -36,6 +38,7 @@ namespace Store.WebUI.Infrastructure
                 WriteAsFile = bool.Parse(ConfigurationManager.AppSettings["Email.WriteAsFile"] ?? "false")
             };
             ninjectKernel.Bind<IOrderProcessor>().To<EmailOrderProcessor>().WithConstructorArgument("settings", emailSettings);
+            ninjectKernel.Bind<IAuthProvider>().To<FormsAuthProvider>();
         }
 
 
