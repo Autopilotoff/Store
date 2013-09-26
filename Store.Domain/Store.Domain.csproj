@@ -86,41 +86,16 @@
   <ItemGroup>
     <Compile Include="Abstract\IOrderProcessor.cs" />
     <Compile Include="Abstract\IProductRepository.cs" />
-    <Compile Include="Concrete\EFDbContext.cs" />
     <Compile Include="Concrete\EFProductRepository.cs" />
     <Compile Include="Concrete\EmailOrderProcessor.cs" />
     <Compile Include="Entities\Cart.cs" />
     <Compile Include="Entities\Product.cs" />
     <Compile Include="Entities\ShippingDetails.cs" />
-    <Compile Include="Migrations\201309231952170_InitialCreate.cs" />
-    <Compile Include="Migrations\201309231952170_InitialCreate.Designer.cs">
-      <DependentUpon>201309231952170_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201309260810076_Product.cs" />
-    <Compile Include="Migrations\201309260810076_Product.Designer.cs">
-      <DependentUpon>201309260810076_Product.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201309260813229_Products.cs" />
-    <Compile Include="Migrations\201309260813229_Products.Designer.cs">
-      <DependentUpon>201309260813229_Products.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201309231952170_InitialCreate.resx">
-      <DependentUpon>201309231952170_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201309260810076_Product.resx">
-      <DependentUpon>201309260810076_Product.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201309260813229_Products.resx">
-      <DependentUpon>201309260813229_Products.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

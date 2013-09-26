@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,6 +26,11 @@ namespace Store.Domain.Entities
         
         [Required (ErrorMessage = "Укажите категорию")]        
         public string Category { get; set; }
+        
+        //public byte ImageData { get; set; }
+        
+        //[HiddenInput(DisplayValue = false)]
+        //public string ImageMimeType { get; set; }
     }
 
     

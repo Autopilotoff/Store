@@ -29,14 +29,14 @@ namespace Store.WebUI.Controllers
         public ActionResult Edit(Product product)
         {
             if (ModelState.IsValid)
-            {
+            { 
                 repository.SaveProduct(product);
-                TempData["message"] = string.Format("Единица товара -={0}=- сохранена", product.Name);
+                TempData["message"] = string.Format("Изменения товара {0} сохранены", product.Name);
                 return RedirectToAction("Index");
             }
             else
             {
-                // что то не так с данными
+                // что то не так
                 return View(product);
             }
         }
