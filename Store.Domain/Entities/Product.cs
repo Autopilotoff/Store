@@ -14,18 +14,18 @@ namespace Store.Domain.Entities
         [HiddenInput(DisplayValue=false)]
         public int ProductID { get; set; }
         
-        //[Required(ErrorMessage = "Введите наименование товара")]
+        [Required(ErrorMessage = "Введите наименование товара")]
         public string Name { get; set; }
  
-        //[Required(ErrorMessage = "Введите описание")]
+        [Required(ErrorMessage = "Введите описание")]
         [DataType(DataType.MultilineText)]
         public string Description { get; set; }
 
-        //[Required(ErrorMessage = "Введите цену единицы товара")]
+        [Required]
         [Range(0.01, double.MaxValue, ErrorMessage = "Введите положительную цену товара")]
         public decimal Price { get; set; }
         
-        //[Required (ErrorMessage = "Укажите категорию")]        
+        [Required (ErrorMessage = "Укажите категорию")]        
         public string Category { get; set; }
     }
 

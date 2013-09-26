@@ -43,5 +43,16 @@ namespace Store.WebUI.Controllers
         {
             return View("Edit", new Product());
         }
+        [HttpPost]
+        public ActionResult Delete(int productId)
+        {
+            Product prod = repository.Products.FirstOrDefault(p => p.ProductID == productId);
+            if (prod != null)
+            {
+                repository.DeleteProduct(prod);
+                TempData["message"] = string.Format("Позиция товара -={0}=- была удалена", prod.Name); 
+            }
+            return RedirectToAction("Index");
+        }
     }
 }
